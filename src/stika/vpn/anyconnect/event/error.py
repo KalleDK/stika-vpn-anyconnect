@@ -13,3 +13,8 @@ class ConnectNotAvailable(Error):
 class VPNClientStateNotConnected(Error):
     def __str__(self):
         return "vpn client state is not connected"
+
+
+class ConnectAlreadyInProgress(Error):
+    def __str__(self):
+        return "connect already in progress"

@@ -20,6 +20,11 @@ class ParseVPNClientStateNotConnected(base.StaticSubParser):
     event = event.VPNClientStateNotConnected
 
 
+class ParseConnectAlreadyInProgress(base.StaticSubParser):
+    prefix = b'  >> error: Connect already in progress. Please wait.'
+    event = event.ConnectAlreadyInProgress
+
+
 PARSERS: List[Type[base.SubParser]] = [
-    ParseConnectNotAvailable, ParseVPNClientStateNotConnected,
+    ParseConnectNotAvailable, ParseVPNClientStateNotConnected, ParseConnectAlreadyInProgress,
 ]
